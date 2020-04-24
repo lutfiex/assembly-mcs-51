@@ -1,0 +1,35 @@
+	mov p0,#00000100
+	call clock
+	mov p0,#00000100
+	call clock
+	mov p0,#00000000
+	call clock
+	mov p0,#00000000
+	call clock
+	mov p0,#00000111
+	call clock
+	mov p0,#00000000
+	call clock
+	mov p0,#00000110
+	setb p1.1
+	mov p0,#00000010
+	call clock
+	mov p0,#00000001
+	call delay
+	
+	
+	clock:
+	setb p1.0
+	clr p1.0
+	call delay
+	ret
+	
+	DELAY:
+	MOV	R6,#20
+	MUTER:
+	MOV	R7,#250
+	DJNZ	R7,$
+	DJNZ	R6,MUTER
+	RET
+	
+	end
