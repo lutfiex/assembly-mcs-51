@@ -1,0 +1,18 @@
+	start: mov a,P0
+	   mov P2,#01h
+	   cjne a,#00000001b,loop1
+	   jmp start
+	 loop1: mov a,P0
+	   mov p2,#01h
+	   cjne a,#00000011b,loop2
+	   jmp loop1
+	loop2: mov a,P0
+	   mov p2,#00h
+	   cjne a,#00000001b,loop3
+	   jmp loop2
+	loop3:mov a,P0
+	   mov p2,#00h
+	   cjne a,#00000000b,start
+	   jmp loop3
+	end
+	  
